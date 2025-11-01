@@ -163,7 +163,7 @@ section {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, var(--deep-green) 0%, var(--warm-green) 20%, var(--burgundy) 20%);
-    background-image: url('krym.webp');
+    background-image: url('krym.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
