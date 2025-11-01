@@ -8,12 +8,13 @@
 :root {
     --burgundy: #8B2635;
     --deep-burgundy: #6B1E2A;
-    --beige: #F5F1E8;
+    --beige: #8b8b8b;
     --gold: #D4AF37;
     --deep-green: #2D5016;
     --warm-green: #4A7C3F;
-    --dark: #2C2C2C;
-    --light: #FAFAFA;
+    --dark: #000000;
+    --light: #ffffff;
+    --xxx: #604848;
 }
 
 html {
@@ -62,7 +63,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(245, 241, 232, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
@@ -161,7 +162,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--deep-green) 0%, var(--warm-green) 50%, var(--burgundy) 100%);
+    background: linear-gradient(135deg, var(--deep-green) 0%, var(--warm-green) 20%, var(--burgundy) 20%);
     background-image: url('krym.webp');
     background-size: cover;
     background-position: center;
@@ -338,7 +339,7 @@ section {
 
 /* Wines Section */
 .wines-section {
-    background: white;
+    background: rgb(115, 114, 114);
 }
 
 .wines-grid {
@@ -379,7 +380,7 @@ section {
 
 .wine-notes {
     font-size: 1rem;
-    color: var(--dark);
+    color: var(--light);
     line-height: 1.7;
 }
 
@@ -390,7 +391,7 @@ section {
 
 /* Philosophy Section */
 .philosophy-section {
-    background: var(--deep-green);
+    background: var(--xxx);
     color: white;
     text-align: center;
 }
@@ -432,7 +433,10 @@ section {
 
 /* Contact Section */
 .contact-section {
-    background: white;
+    background: var(--xxx);
+    color: var(--light);
+
+    
 }
 
 .contact-content {
@@ -441,12 +445,15 @@ section {
     gap: 60px;
     max-width: 1000px;
     margin: 0 auto;
+    color: var(--light);
 }
 
 .contact-info p {
     font-size: 1.1rem;
     margin-bottom: 20px;
     line-height: 1.8;
+    color: var(--light);
+
 }
 
 .contact-details {
@@ -455,10 +462,11 @@ section {
 
 .contact-details p {
     margin-bottom: 15px;
+
 }
 
 .contact-details strong {
-    color: var(--burgundy);
+    color: var(--dark);
 }
 
 .social-links {
@@ -492,7 +500,7 @@ section {
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
     transition: border-color 0.3s ease;
-    background: var(--beige);
+    background: var(--light);
 }
 
 .form-group input:focus,
