@@ -143,7 +143,7 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
 });
 
 // Form submission
-const contactForm = document.querySelector('.contact-form');
+const contactForm = document.querySelector('.contact-form-modern');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
