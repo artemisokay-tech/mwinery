@@ -75,16 +75,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Form submission
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Here you would normally send the form data to a server
-        alert('Thank you for your message! We will get back to you soon.');
-        contactForm.reset();
-    });
-}
+// Form submission will be handled by language switcher
 
 // Parallax effect for hero section (subtle)
 window.addEventListener('scroll', () => {
@@ -94,3 +85,70 @@ window.addEventListener('scroll', () => {
         hero.style.transform = `translateY(${scrolled * 0.5}px)`;
     }
 });
+
+// Language Switcher
+let currentLang = localStorage.getItem('selectedLanguage') || 'en';
+
+function switchLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('selectedLanguage', lang);
+    
+    // Update all elements with data-en and data-ru attributes
+    document.querySelectorAll('[data-en][data-ru]').forEach(el => {
+        if (lang === 'ru') {
+            el.textContent = el.getAttribute('data-ru');
+        } else {
+            el.textContent = el.getAttribute('data-en');
+        }
+    });
+    
+    // Update placeholders for inputs and textareas
+    document.querySelectorAll('[data-placeholder-en][data-placeholder-ru]').forEach(el => {
+        if (lang === 'ru') {
+            el.placeholder = el.getAttribute('data-placeholder-ru');
+        } else {
+            el.placeholder = el.getAttribute('data-placeholder-en');
+        }
+    });
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = lang === 'ru' ? 'ru' : 'en';
+    
+    // Update active button
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    
+    // Update form submission message
+    if (lang === 'ru') {
+        window.formSuccessMessage = 'Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.';
+    } else {
+        window.formSuccessMessage = 'Thank you for your message! We will get back to you soon.';
+    }
+}
+
+// Initialize language on page load
+switchLanguage(currentLang);
+
+// Add event listeners to language buttons
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        switchLanguage(lang);
+    });
+});
+
+// Form submission
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const message = window.formSuccessMessage || 'Thank you for your message! We will get back to you soon.';
+        alert(message);
+        contactForm.reset();
+    });
+}
