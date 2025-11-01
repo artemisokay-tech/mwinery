@@ -162,7 +162,7 @@ section {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, var(--deep-green) 0%, var(--warm-green) 50%, var(--burgundy) 100%);
-    background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+    background-image: url('krym.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
