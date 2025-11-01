@@ -280,7 +280,7 @@ section {
 .about-text p {
     font-size: 1.15rem;
     margin-bottom: 25px;
-    color: var(--dark);
+    color: white;
     line-height: 1.9;
 }
 
